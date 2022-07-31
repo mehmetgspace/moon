@@ -23,3 +23,13 @@ function createPermalink(text) {
 
   return text.toLowerCase();
 }
+
+/**
+ * Check if value has turkish dependent character (It's useful for an alternate search)
+ * @param value
+ * @returns {boolean}
+ */
+function isContainTurkishDependentCharacter(value) {
+  const regex = /[cCçÇgGğĞıIiİoOöÖsSşŞuUüÜ]/;
+  return regex.test(value);
+}
