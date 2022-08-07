@@ -42,3 +42,15 @@ function getCurrentDate() {
   const today = new Date();
   return today.toLocaleDateString('tr-TR');
 }
+
+/**
+ * Get current hour and minute
+ * @returns {string}
+ */
+function getCurrentTime() {
+  const now = new Date();
+  return now.toLocaleTimeString('tr-TR', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
