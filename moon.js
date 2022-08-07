@@ -33,3 +33,12 @@ function isContainTurkishDependentCharacter(value) {
   const regex = /[cCçÇgGğĞıIiİoOöÖsSşŞuUüÜ]/;
   return regex.test(value);
 }
+
+/**
+ * Get current date
+ * @returns {string}
+ */
+function getCurrentDate() {
+  const today = new Date();
+  return today.toLocaleDateString('tr-TR');
+}
