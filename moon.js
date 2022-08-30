@@ -54,3 +54,40 @@ function getCurrentTime() {
     minute: '2-digit'
   });
 }
+
+/**
+ * Get current day name
+ * @returns {string}
+ */
+function getCurrentDay() {
+  // create a variable for result value
+  let customValue = '';
+
+  // create locale day list
+  const dayNames = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
+
+  // get today index value
+  const todayIndex = new Date().getDay();
+
+  // find index value for day name
+  let arrIndex;
+  switch (todayIndex) {
+    case 0:
+      // for sunday
+      arrIndex = dayNames.length - 1;
+      break;
+    default:
+      // for other days
+      arrIndex = todayIndex - 1;
+      break;
+  }
+
+  // find name in day list
+  const findName = dayNames[arrIndex];
+  if (typeof findName !== 'undefined') {
+    customValue = findName;
+  }
+
+  // return the result value
+  return customValue;
+}
