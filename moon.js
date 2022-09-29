@@ -91,3 +91,21 @@ function getCurrentDay() {
   // return the result value
   return customValue;
 }
+
+/**
+ * Convert seconds to minutes with text
+ * @param seconds
+ */
+function convertSecondsToMinutesWithText(seconds) {
+  // create a variable for result value
+  let result = null;
+
+  // check if the value is a number
+  if (!isNaN(seconds)) {
+    // convert value to specified format
+    result = `${moment.utc(seconds * 1000).format("m")}dk`;
+  }
+
+  // return the result value
+  return result;
+}
